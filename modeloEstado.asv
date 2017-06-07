@@ -1,0 +1,17 @@
+function [ A,B,C,D ] = modeloEstado( F1, F2 )
+%Función que permite la obtención del modelo de estado asociado
+
+a = F1(1)(2); %Se obtiene el valor a de la función
+b = F1(2)(1); %Se obtiene el valor b de la función
+c = F1(2)(2); %Se obtiene el valor c de la función
+
+d = F2(1)(2); %Se obtiene el valor a de la función
+e = F2(2)(1); %Se obtiene el valor b de la función
+f = F2(2)(2 ); %Se obtiene el valor c de la función
+
+A = [-c/b -a/b; d/e -f/e];
+B = [a/b ; 0];
+C = [1 0];
+D = 0;
+end
+
