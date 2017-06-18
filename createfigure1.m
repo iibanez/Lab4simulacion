@@ -14,11 +14,7 @@ box(axes1,'on');
 hold(axes1,'all');
 
 % Create plot
-if(type == 1) %tipo continuo
-    plot(X1,Y1);
-else %tipo discreto
-    stairs(X1,Y1);
-end
+plot(X1,Y1);
 
 % Create title
 title(STRING,'Interpreter','latex','FontSize',20);
@@ -27,8 +23,11 @@ title(STRING,'Interpreter','latex','FontSize',20);
 xlabel('Tiempo (segundos)','Interpreter','latex','FontSize',20);
 
 % Create ylabel
-ylabel('Amplitud','Interpreter','latex','FontSize',20);
-
+if(type == 1)
+    ylabel('Altura','Interpreter','latex','FontSize',20);
+elseif(type == 2)
+    ylabel('Voltaje','Interpreter','latex','FontSize',20);
+end
 set(figure1, 'Position', get(0,'Screensize'));
 
 end

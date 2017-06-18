@@ -38,7 +38,7 @@ D = [0;0];
 
 syms s
 %Del modelo obtener funciones de transferencia
-modelo = C*inv(s*eye(2)-A)*B+D;
+modelo = C*inv(s*eye(2)-A)*B+D
 t = 0:0.1:100;
 
 %Son evaluadas cada una de las funciones de transferencia
@@ -46,9 +46,9 @@ y1 = subs(ilaplace(modelo(1)*(1/s)),t);
 y2 = subs(ilaplace(modelo(2)*(1/s)),t);
 
 %graficar funcion de transferencia 1
-createfigure1(t,y1,'Respuesta impulso unitario funcion de transferencia Vc1', 1);
+createfigure1(t,y1,'Respuesta impulso unitario funcion de transferencia Vc1', 2);
 pause;
 %graficar funcion de transferencia 1
-createfigure1(t,y2,'Respuesta impulso unitario funcion de transferencia Vc2', 1);
+createfigure1(t,y2,'Respuesta impulso unitario funcion de transferencia Vc2', 2);
 pause;
 
